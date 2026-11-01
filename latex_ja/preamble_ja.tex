@@ -1,0 +1,56 @@
+% ===== Shared preamble for the Japanese edition =====
+% Engine: LuaLaTeX + luatexja.  Fonts match the original scan:
+%   Japanese  : Hiragino Mincho ProN (original used HiraMinProN-W3)
+%   Latin     : TeX Gyre Termes      (original used Times-Roman)
+\usepackage{luatexja-fontspec}
+\setmainjfont[BoldFont={HiraMinProN-W6}]{HiraMinProN-W3}
+\setsansjfont[BoldFont={HiraKakuProN-W6}]{HiraKakuProN-W3}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+
+\usepackage{graphicx}
+\graphicspath{{../}{./}}
+\usepackage{geometry}
+\geometry{a4paper,top=30mm,bottom=30mm,inner=28mm,outer=24mm}
+\usepackage{amssymb}
+\usepackage{ragged2e}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\captionsetup{font=small,labelsep=quad}
+\captionsetup[figure]{name=譜例} % musical examples -> 譜例 N
+
+% No automatic section numbers: the original prints literal labels
+% (第一章, A., 1.) inside the headings themselves.
+\setcounter{secnumdepth}{-1}
+\setcounter{tocdepth}{2}
+
+% Indented, smaller-type block quotation matching the original's set-off quotes.
+\usepackage{environ}
+\newenvironment{gquote}
+  {\par\medskip\begingroup\small\leftskip=2.2em\rightskip=1.2em\parindent=1em\relax}
+  {\par\endgroup\medskip}
+
+% Figure placement default
+\usepackage{float}
+
+% Line spacing a touch open, like the typescript
+\usepackage{setspace}
+\setstretch{1.15}
+
+% Centred set-off block for chord charts / lyrics / 採譜 captions
+\newenvironment{verseblock}
+  {\par\smallskip\begin{center}\small\setstretch{1.1}}
+  {\end{center}\smallskip}
+
+% Left-aligned set-off list (discographies, enumerations quoted from sources)
+\newenvironment{listblock}
+  {\par\smallskip\begingroup\small\setstretch{1.1}\leftskip=2em\parindent=0pt}
+  {\par\endgroup\smallskip}
+
+\usepackage{longtable}
+\usepackage{array}
+
+% Bibliography (文献目録): hanging-indent entries and bold sub-heads
+\newcommand{\bibsubhead}[1]{\par\medskip{\large\bfseries #1}\par\nopagebreak\smallskip}
+\newcommand{\bibentry}[1]{\par\noindent\hangindent=1.6em\hangafter=1\relax #1\par\smallskip}

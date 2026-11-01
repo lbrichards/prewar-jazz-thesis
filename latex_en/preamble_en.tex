@@ -1,0 +1,45 @@
+% ===== Shared preamble for the English edition =====
+% Engine: LuaLaTeX. Latin main font = TeX Gyre Termes (Times-like).
+% Japanese glyphs (song titles, names) via luatexja + Hiragino Mincho ProN.
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+\usepackage{luatexja-fontspec}
+\setmainjfont[BoldFont={HiraMinProN-W6}]{HiraMinProN-W3}
+\usepackage{luatexja-adjust}
+
+\usepackage{graphicx}
+\graphicspath{{../}{./}}
+\usepackage{geometry}
+\geometry{a4paper,top=30mm,bottom=30mm,inner=28mm,outer=24mm}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\captionsetup{font=small,labelsep=period}
+\captionsetup[figure]{name=Example}   % musical examples -> "Example N"
+
+\setcounter{secnumdepth}{-1}
+\setcounter{tocdepth}{2}
+
+\usepackage{environ}
+\newenvironment{gquote}
+  {\par\medskip\begingroup\small\leftskip=2.2em\rightskip=1.2em\parindent=1em\relax}
+  {\par\endgroup\medskip}
+
+\newenvironment{verseblock}
+  {\par\smallskip\begin{center}\small}
+  {\end{center}\smallskip}
+\newenvironment{listblock}
+  {\par\smallskip\begingroup\small\leftskip=2em\parindent=0pt}
+  {\par\endgroup\smallskip}
+
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{float}
+
+\newcommand{\bibsubhead}[1]{\par\medskip{\large\bfseries #1}\par\nopagebreak\smallskip}
+\newcommand{\bibentry}[1]{\par\noindent\hangindent=1.6em\hangafter=1\relax #1\par\smallskip}
+
+\usepackage{setspace}
+\setstretch{1.08}
+\usepackage[english]{babel}

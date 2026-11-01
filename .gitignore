@@ -1,0 +1,41 @@
+# LaTeX build intermediates
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# latexmk / build dirs
+_minted*/
+build/
+
+# Rendered preview images (regenerated on demand)
+latex_ja/*.png
+latex_en/*.png
+latex_ja/_preamble_check.*
+*.build.log
+
+# Original 54 MB scan (not redistributed here; provenance only)
+lr_thesis.pdf
+
+# Scratch / working dirs
+scratch_*/
+transcript/en/t*_ja.md
+transcript/en/t*_en.md
+transcript/en/bib_*.md
+
+# OS / editor
+.DS_Store
+node_modules/
